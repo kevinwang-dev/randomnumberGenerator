@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Random Number</title>
+    <style>
+        body{
+            background-color: #aa8cd4;
+        }
+        .container{
+            text-align: center;
+            font-family: monospace;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-top: 10%;
+            font-size: 30px;
+        }
+
+        h1{
+            color:#99D761;
+        }
+        button{
+            border: none;
+            outline: none;
+            padding: 8px 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            font: inherit;
+        }
+        button:hover{
+            background-color: lightgreen;
+            transition: .8s;
+        }
+
+        .number{
+           
+            display: block;
+            font-size: 60px;
+            color: white;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            width: 10%;
+            margin: 30px auto;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Random Number</h1>
+        <div>
+            <button onclick="randomNum()">Generate</button>
+            <span class="number">?</span>
+            <h2>Even or Odd: <span class="numType"></span></h2>
+        </div>
+    </div>
+
+<script>
+    
+    const randomNum = () => {
+        const displayNumber = document.querySelector('.number');
+        let rand = Math.floor(Math.random() * 100) + 1;
+        displayNumber.innerHTML = rand;
+        const numType = document.querySelector(".numType")
+        if(rand % 2 === 0){
+            numType.innerHTML = 'Even';
+        } else {
+            numType.innerHTML = 'Odd';
+        }
+    }
+
+</script>
+</body>
+</html>
